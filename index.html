@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-amber-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dunia Minat & Wawancara - Bahasa Indonesia Kelas 6 SD</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans for playful yet legible typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandYellow: '#FFC72C',
+            brandOrange: '#FF7A00',
+            brandBlue: '#00A8E8',
+            brandLightBlue: '#E0F7FC',
+            brandGreen: '#4CAF50',
+            brandPurple: '#9C27B0',
+            brandPink: '#FF4081',
+          },
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          boxShadow: {
+            'playful': '0 8px 0 0 rgba(0, 0, 0, 0.15)',
+            'playful-sm': '0 4px 0 0 rgba(0, 0, 0, 0.12)',
+            'playful-orange': '0 6px 0 0 #D96800',
+            'playful-blue': '0 6px 0 0 #0077A8',
+            'playful-green': '0 6px 0 0 #388E3C',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    h1, h2, h3, h4, .font-fun {
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+    /* Custom Scrollbar for cute app look */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF9E6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFC72C;
+      border-radius: 10px;
+    }
+    .animate-bounce-slow {
+      animation: bounce 2s infinite;
+    }
+    .pulse-glow {
+      animation: pulseGlow 1.5s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255, 199, 44, 0.6)); }
+      to { transform: scale(1.03); filter: drop-shadow(0 0 10px rgba(255, 122, 0, 0.8)); }
+    }
+    /* Touch canvas protection for Line Matching */
+    #matchingCanvas {
+      touch-action: none;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col justify-between text-slate-800 antialiased bg-gradient-to-b from-amber-100 via-orange-50 to-sky-100 min-h-screen">
+
+  <!-- TOP APP BAR / HEADER -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b-4 border-amber-300 px-4 py-3 flex items-center justify-between shadow-md">
+    <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('dashboard')">
+      <div class="w-10 h-10 rounded-2xl bg-amber-400 flex items-center justify-center border-2 border-amber-500 shadow-playful-sm text-white font-bold text-xl">
+        📖
+      </div>
+      <div>
+        <h1 class="text-base font-bold text-amber-900 leading-none">Kelas 6 SD</h1>
+        <p class="text-xs text-amber-600 font-semibold">Minat, Bakat & Wawancara</p>
+      </div>
+    </div>
+    
+    <div id="headerHomeBtn" class="hidden">
+      <button onclick="navigateTo('dashboard')" class="bg-sky-500 hover:bg-sky-600 active:translate-y-1 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-playful-blue flex items-center transition">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Menu Utama
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER FOR PORTALS -->
+  <main class="flex-grow p-4 max-w-md mx-auto w-full pb-20">
+
+    <!-- DASHBOARD / HOMEPAGE -->
+    <section id="portal-dashboard" class="space-y-5">
+      <!-- HERO BANNER -->
+      <div class="bg-gradient-to-r from-amber-400 to-orange-400 rounded-3xl p-5 text-white shadow-playful relative overflow-hidden border-4 border-white">
+        <div class="relative z-10">
+          <span class="inline-block bg-white/20 backdrop-blur-md text-amber-950 font-bold text-xs px-3 py-1 rounded-full mb-2">✨ Modul Bahasa Indonesia</span>
+          <h2 class="text-2xl font-black font-fun leading-tight text-yellow-100">Jelajahi Bakatmu, Sahabat Cilik! 🌟</h2>
+          <p class="text-xs mt-1 text-white/90 leading-relaxed font-medium">Ayo pelajari minat, bakat, cita-cita, dan cara melakukan wawancara dengan seru!</p>
+        </div>
+        <!-- Decorative SVG Cartoon Mascot -->
+        <div class="absolute -right-3 -bottom-4 w-28 h-28 opacity-90 pointer-events-none">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="80" fill="#FFE082" />
+            <circle cx="70" cy="80" r="12" fill="#333" />
+            <circle cx="130" cy="80" r="12" fill="#333" />
+            <circle cx="74" cy="76" r="4" fill="#FFF" />
+            <circle cx="134" cy="76" r="4" fill="#FFF" />
+            <path d="M 70 120 Q 100 150 130 120" stroke="#333" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <circle cx="50" cy="105" r="10" fill="#FF8A80" opacity="0.6"/>
+            <circle cx="150" cy="105" r="10" fill="#FF8A80" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- PORTAL SELECTION GRID -->
+      <div class="space-y-3">
+        <h3 class="font-fun font-bold text-lg text-slate-700 flex items-center gap-2">
+          <span>🚀 Pilih Portal Belajar</span>
+          <span class="text-xs font-normal text-slate-500">(Sentuh kartu)</span>
+        </h3>
+
+        <!-- PORTAL CARD 1 -->
+        <div onclick="navigateTo('portal1')" class="bg-white rounded-2xl p-4 border-2 border-amber-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-3xl shrink-0">
+            🎨
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">Portal 1</span>
+            <h4 class="font-fun font-bold text-slate-800 text-base leading-snug">Mengenali Minat, Bakat & Cita-Cita</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Kenali potensi diri dan cerita inspiratif Rina.</p>
+          </div>
+          <div class="text-amber-400 font-bold text-xl">➔</div>
+        </div>
+
+        <!-- PORTAL CARD 2 -->
+        <div onclick="navigateTo('portal2')" class="bg-white rounded-2xl p-4 border-2 border-sky-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-sky-100 border-2 border-sky-400 flex items-center justify-center text-3xl shrink-0">
+            🥋
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-sky-600 bg-sky-50 px-2 py-0.5 rounded-md">Portal 2</span>
+            <h4 class="font-fun font-bold text-slate-800 text-base leading-snug">Hubungan Minat, Karakter & Cita-Cita</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Alur proses dan kisah semangat Agung!</p>
+          </div>
+          <div class="text-sky-400 font-bold text-xl">➔</div>
+        </div>
+
+        <!-- PORTAL CARD 3 -->
+        <div onclick="navigateTo('portal3')" class="bg-white rounded-2xl p-4 border-2 border-orange-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-orange-100 border-2 border-orange-400 flex items-center justify-center text-3xl shrink-0">
+            🛡️
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-orange-600 bg-orange-50 px-2 py-0.5 rounded-md">Portal 3</span>
+            <h4 class="font-fun font-bold text-slate-800 text-base leading-snug">Tantangan dalam Meraih Cita-Cita</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Temukan solusi cerdas menghadapi masalah.</p>
+          </div>
+          <div class="text-orange-400 font-bold text-xl">➔</div>
+        </div>
+
+        <!-- PORTAL CARD 4 -->
+        <div onclick="navigateTo('portal4')" class="bg-white rounded-2xl p-4 border-2 border-emerald-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 border-2 border-emerald-400 flex items-center justify-center text-3xl shrink-0">
+            🎙️
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">Portal 4</span>
+            <h4 class="font-fun font-bold text-slate-800 text-base leading-snug">Mengenal Wawancara & Etika</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Komponen utama dan etika mewawancarai.</p>
+          </div>
+          <div class="text-emerald-400 font-bold text-xl">➔</div>
+        </div>
+
+        <!-- PORTAL CARD 5 -->
+        <div onclick="navigateTo('portal5')" class="bg-white rounded-2xl p-4 border-2 border-purple-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-purple-100 border-2 border-purple-400 flex items-center justify-center text-3xl shrink-0">
+            💬
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md">Portal 5</span>
+            <h4 class="font-fun font-bold text-slate-800 text-base leading-snug">Contoh Pertanyaan Wawancara</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Gelembung percakapan pertanyaan minat.</p>
+          </div>
+          <div class="text-purple-400 font-bold text-xl">➔</div>
+        </div>
+
+        <!-- PORTAL CARD 6 (ASSESSMENT) -->
+        <div onclick="navigateTo('portal6')" class="bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl p-4 border-2 border-rose-300 shadow-playful hover:translate-y-[-2px] active:translate-y-1 transition cursor-pointer flex items-center space-x-4 text-white pulse-glow">
+          <div class="w-14 h-14 rounded-2xl bg-white/20 border-2 border-white/40 flex items-center justify-center text-3xl shrink-0">
+            📝
+          </div>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold tracking-wider uppercase bg-white/30 text-white px-2 py-0.5 rounded-md">Portal 6</span>
+            <h4 class="font-fun font-bold text-white text-base leading-snug">Asesmen Formatif Interaktif</h4>
+            <p class="text-xs text-rose-100 mt-0.5">Uji pemahamanmu & dapatkan nilaimu!</p>
+          </div>
+          <div class="text-white font-bold text-xl">➔</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAL 1: MENGENALI MINAT, BAKAT, & CITA-CITA -->
+    <section id="portal-1" class="hidden space-y-5">
+      <div class="bg-amber-100 border-2 border-amber-300 rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-3xl">🎨</span>
+        <div>
+          <span class="text-[10px] font-bold text-amber-600 bg-amber-200 px-2 py-0.5 rounded">PORTAL 1</span>
+          <h2 class="font-fun text-xl font-bold text-amber-900">Mengenali Minat, Bakat, dan Cita-Cita</h2>
+        </div>
+      </div>
+
+      <!-- 4 DEFINITION CARDS -->
+      <p class="text-xs text-slate-600 font-semibold">Tekan tiap kartu di bawah ini untuk melihat keterangannya:</p>
+      
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Minat -->
+        <div onclick="toggleCardDetail('def-minat')" class="bg-white border-2 border-amber-200 p-3 rounded-2xl shadow-playful-sm text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 mx-auto bg-amber-100 rounded-full flex items-center justify-center text-2xl mb-2">❤️</div>
+          <h3 class="font-fun font-bold text-slate-800">1. Minat</h3>
+          <p id="def-minat" class="text-xs text-amber-800 mt-1 bg-amber-50 p-2 rounded-xl border border-amber-200">Ketertarikan terhadap suatu kegiatan atau bidang tertentu.</p>
+        </div>
+
+        <!-- Bakat -->
+        <div onclick="toggleCardDetail('def-bakat')" class="bg-white border-2 border-sky-200 p-3 rounded-2xl shadow-playful-sm text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 mx-auto bg-sky-100 rounded-full flex items-center justify-center text-2xl mb-2">⭐</div>
+          <h3 class="font-fun font-bold text-slate-800">2. Bakat</h3>
+          <p id="def-bakat" class="text-xs text-sky-800 mt-1 bg-sky-50 p-2 rounded-xl border border-sky-200">Potensi atau kemampuan alami yang dapat terus dikembangkan.</p>
+        </div>
+
+        <!-- Karakter -->
+        <div onclick="toggleCardDetail('def-karakter')" class="bg-white border-2 border-purple-200 p-3 rounded-2xl shadow-playful-sm text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 mx-auto bg-purple-100 rounded-full flex items-center justify-center text-2xl mb-2">💎</div>
+          <h3 class="font-fun font-bold text-slate-800">3. Karakter</h3>
+          <p id="def-karakter" class="text-xs text-purple-800 mt-1 bg-purple-50 p-2 rounded-xl border border-purple-200">Sifat atau sikap yang memengaruhi cara berpikir dan bertindak.</p>
+        </div>
+
+        <!-- Cita-cita -->
+        <div onclick="toggleCardDetail('def-citacita')" class="bg-white border-2 border-emerald-200 p-3 rounded-2xl shadow-playful-sm text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 mx-auto bg-emerald-100 rounded-full flex items-center justify-center text-2xl mb-2">🎯</div>
+          <h3 class="font-fun font-bold text-slate-800">4. Cita-cita</h3>
+          <p id="def-citacita" class="text-xs text-emerald-800 mt-1 bg-emerald-50 p-2 rounded-xl border border-emerald-200">Keinginan atau tujuan utama yang ingin dicapai di masa depan.</p>
+        </div>
+      </div>
+
+      <!-- CASE STUDY RINA (ILLUSTRATED CARD) -->
+      <div class="bg-white border-2 border-amber-300 rounded-2xl p-4 shadow-playful space-y-3">
+        <div class="flex items-center space-x-3 border-b pb-3">
+          <!-- Rina Custom SVG Canvas Illustration -->
+          <div class="w-16 h-16 rounded-2xl bg-pink-100 border-2 border-pink-300 flex items-center justify-center shrink-0">
+            <svg class="w-12 h-12" viewBox="0 0 100 100">
+              <!-- Palette & Brush -->
+              <circle cx="50" cy="45" r="30" fill="#FFD1DC"/>
+              <!-- Hair -->
+              <path d="M 25 45 Q 50 10 75 45 Z" fill="#4A2E2B"/>
+              <!-- Eyes -->
+              <circle cx="40" cy="45" r="3" fill="#333"/>
+              <circle cx="60" cy="45" r="3" fill="#333"/>
+              <!-- Smile -->
+              <path d="M 42 55 Q 50 62 58 55" stroke="#333" stroke-width="2" fill="none"/>
+              <!-- Paint Palette overlay -->
+              <path d="M 65 60 Q 85 60 80 80 Q 60 90 55 75 Z" fill="#E2C044" stroke="#9E8008" stroke-width="1.5"/>
+              <circle cx="68" cy="68" r="2" fill="#E63946"/>
+              <circle cx="74" cy="72" r="2" fill="#457B9D"/>
+              <circle cx="63" cy="74" r="2" fill="#2A9D8F"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] bg-pink-100 text-pink-700 font-bold px-2 py-0.5 rounded-full">Studi Kasus Bergambar</span>
+            <h3 class="font-fun font-bold text-slate-800 text-lg">Kisah Rina & Kuas Ajaib</h3>
+          </div>
+        </div>
+
+        <div class="space-y-2 text-xs text-slate-700 leading-relaxed">
+          <div class="bg-pink-50 p-2.5 rounded-xl border border-pink-200">
+            <strong>🎨 Minat Rina:</strong> Menggambar & mewarnai pemandangan.
+          </div>
+          <div class="bg-purple-50 p-2.5 rounded-xl border border-purple-200">
+            <strong>✨ Karakter Rina:</strong> Tekun, sabar, dan tidak mudah menyerah saat hasil gambarnya belum rapi.
+          </div>
+          <div class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+            <strong>🚀 Cita-cita Rina:</strong> Menjadi seorang <strong>Ilustrator Buku Cerita Anak</strong> profesional!
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHT BOX -->
+      <div class="bg-amber-400 text-amber-950 p-4 rounded-2xl shadow-playful border-2 border-amber-500 flex items-start space-x-3">
+        <span class="text-3xl">💡</span>
+        <div>
+          <h4 class="font-fun font-bold text-sm uppercase tracking-wide">Pesan Penting Catatan Guru:</h4>
+          <p class="text-xs font-semibold leading-relaxed mt-1">
+            "Memiliki minat bukan berarti kamu langsung mahir! Kemampuan hebat selalu dikembangkan lewat latihan rutin & belajar pantang menyerah."
+          </p>
+        </div>
+      </div>
+
+      <button onclick="navigateTo('portal2')" class="w-full bg-amber-500 text-white font-fun font-bold py-3 rounded-2xl shadow-playful-orange active:translate-y-1 transition text-center">
+        Lanjut ke Portal 2 ➔
+      </button>
+    </section>
+
+    <!-- PORTAL 2: HUBUNGAN MINAT, KARAKTER & CITA-CITA -->
+    <section id="portal-2" class="hidden space-y-5">
+      <div class="bg-sky-100 border-2 border-sky-300 rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-3xl">🥋</span>
+        <div>
+          <span class="text-[10px] font-bold text-sky-600 bg-sky-200 px-2 py-0.5 rounded">PORTAL 2</span>
+          <h2 class="font-fun text-xl font-bold text-sky-900">Hubungan Minat, Karakter, dan Cita-Cita</h2>
+        </div>
+      </div>
+
+      <!-- FLOWCHART INTERACTIVE -->
+      <div class="bg-white border-2 border-sky-300 rounded-2xl p-4 shadow-playful space-y-3">
+        <h3 class="font-fun font-bold text-slate-800 text-center text-base"> Tahapan Meraih Cita-Cita</h3>
+        <p class="text-[11px] text-center text-slate-500">Alur berkesinambungan membentuk kemampuan unggul:</p>
+
+        <div class="space-y-2 pt-2">
+          <!-- Step 1 -->
+          <div class="bg-sky-50 border-2 border-sky-300 rounded-xl p-3 flex items-center space-x-3 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-sky-500 text-white font-bold font-fun flex items-center justify-center shrink-0">1</div>
+            <div>
+              <p class="text-xs font-bold text-sky-900">Suka Kegiatan (Minat)</p>
+              <p class="text-[11px] text-slate-600">Menemukan hal yang menyenangkan hati.</p>
+            </div>
+          </div>
+          <div class="text-center text-sky-500 font-bold text-lg leading-none">↓</div>
+
+          <!-- Step 2 -->
+          <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-3 flex items-center space-x-3 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-white font-bold font-fun flex items-center justify-center shrink-0">2</div>
+            <div>
+              <p class="text-xs font-bold text-amber-900">Berlatih Rutin (Disiplin)</p>
+              <p class="text-[11px] text-slate-600">Mengulang latihan walau terasa sulit.</p>
+            </div>
+          </div>
+          <div class="text-center text-amber-500 font-bold text-lg leading-none">↓</div>
+
+          <!-- Step 3 -->
+          <div class="bg-purple-50 border-2 border-purple-300 rounded-xl p-3 flex items-center space-x-3 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-purple-500 text-white font-bold font-fun flex items-center justify-center shrink-0">3</div>
+            <div>
+              <p class="text-xs font-bold text-purple-900">Kembangkan Kemampuan (Bakat)</p>
+              <p class="text-[11px] text-slate-600">Potensi terasah menjadi keahlian nyata.</p>
+            </div>
+          </div>
+          <div class="text-center text-purple-500 font-bold text-lg leading-none">↓</div>
+
+          <!-- Step 4 -->
+          <div class="bg-orange-50 border-2 border-orange-300 rounded-xl p-3 flex items-center space-x-3 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-orange-500 text-white font-bold font-fun flex items-center justify-center shrink-0">4</div>
+            <div>
+              <p class="text-xs font-bold text-orange-900">Tentukan Tujuan (Target)</p>
+              <p class="text-[11px] text-slate-600">Fokus pada impian yang ingin dicapai.</p>
+            </div>
+          </div>
+          <div class="text-center text-orange-500 font-bold text-lg leading-none">↓</div>
+
+          <!-- Step 5 -->
+          <div class="bg-emerald-500 text-white border-2 border-emerald-600 rounded-xl p-3 flex items-center space-x-3 shadow-playful-green">
+            <div class="w-8 h-8 rounded-full bg-white text-emerald-600 font-bold font-fun flex items-center justify-center shrink-0 text-lg">🏆</div>
+            <div>
+              <p class="text-xs font-bold font-fun uppercase tracking-wide">Meraih Cita-Cita!</p>
+              <p class="text-[11px] text-emerald-100">Menjadi pribadi sukses dan bermanfaat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSPIRATIONAL STORY AGUNG -->
+      <div class="bg-white border-2 border-sky-300 rounded-2xl p-4 shadow-playful space-y-3">
+        <div class="flex items-center space-x-3">
+          <!-- Agung SVG Graphic -->
+          <div class="w-16 h-16 rounded-2xl bg-sky-100 border-2 border-sky-400 flex items-center justify-center shrink-0">
+            <svg class="w-12 h-12" viewBox="0 0 100 100">
+              <circle cx="50" cy="40" r="25" fill="#FFCBA4"/>
+              <!-- Short hair -->
+              <path d="M 25 35 Q 50 15 75 35 Z" fill="#222"/>
+              <!-- Karate Headband -->
+              <rect x="25" y="30" width="50" height="8" fill="#E63946" rx="2"/>
+              <!-- Eyes -->
+              <circle cx="40" cy="42" r="3" fill="#222"/>
+              <circle cx="60" cy="42" r="3" fill="#222"/>
+              <!-- Determination Mouth -->
+              <path d="M 43 53 L 57 53" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Karate Dobok uniform -->
+              <path d="M 20 85 L 35 65 L 50 80 L 65 65 L 80 85 Z" fill="#FFF" stroke="#CCC"/>
+              <!-- Black Belt -->
+              <rect x="30" y="80" width="40" height="6" fill="#111"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded-full">Cerita Inspiratif</span>
+            <h3 class="font-fun font-bold text-slate-800 text-base">Kisah Agung: Dari Karate ke Kopassus</h3>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-700 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-200">
+          Sejak SD, <strong>Agung</strong> sangat menyukai bela diri Karate. Ia memiliki <strong>karakter disiplin tinggi, pantang menyerah, dan rajin berolahraga</strong> setiap sore. Berkat konsistensinya, latihan Karate melatih ketahanan fisik dan keberaniannya. Saat dewasa, Agung berhasil mewujudkan cita-citanya menjadi anggota <strong>TNI (Kopassus)</strong> yang tangguh membela negara!
+        </p>
+
+        <div class="bg-sky-50 border border-sky-200 p-2.5 rounded-xl text-center">
+          <p class="text-xs text-sky-900 font-bold">Kunci Sukses Agung:</p>
+          <div class="flex justify-center gap-2 mt-1">
+            <span class="bg-sky-200 text-sky-800 text-[10px] font-bold px-2 py-1 rounded-md">💪 Disiplin</span>
+            <span class="bg-sky-200 text-sky-800 text-[10px] font-bold px-2 py-1 rounded-md">🔥 Tekun</span>
+            <span class="bg-sky-200 text-sky-800 text-[10px] font-bold px-2 py-1 rounded-md">🛡️ Pantang Menyerah</span>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="navigateTo('portal3')" class="w-full bg-sky-500 text-white font-fun font-bold py-3 rounded-2xl shadow-playful-blue active:translate-y-1 transition text-center">
+        Lanjut ke Portal 3 ➔
+      </button>
+    </section>
+
+    <!-- PORTAL 3: TANTANGAN DALAM MERAIH CITA-CITA -->
+    <section id="portal-3" class="hidden space-y-5">
+      <div class="bg-orange-100 border-2 border-orange-300 rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-3xl">🛡️</span>
+        <div>
+          <span class="text-[10px] font-bold text-orange-600 bg-orange-200 px-2 py-0.5 rounded">PORTAL 3</span>
+          <h2 class="font-fun text-xl font-bold text-orange-900">Tantangan dalam Meraih Cita-Cita</h2>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-600">Dalam perjalanan meraih impian, pasti ada hambatan. Jangan takut! Mari bandingkan tantangan dan solusinya:</p>
+
+      <!-- 2 COLUMN COMPARISON CARDS -->
+      <div class="space-y-3">
+        <!-- Item 1 -->
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-3 shadow-playful-sm space-y-2">
+          <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">❌</span>
+            <div>
+              <p class="text-[11px] font-bold text-rose-600 uppercase">Tantangan #1</p>
+              <p class="text-xs text-slate-800 font-bold">Susah Membagi Waktu</p>
+              <p class="text-[11px] text-slate-600">Bingung membagi waktu antara bermain, belajar, dan latihan.</p>
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">✅</span>
+            <div>
+              <p class="text-[11px] font-bold text-emerald-600 uppercase">Solusi Cerdas</p>
+              <p class="text-xs text-slate-800 font-bold">Buat Jadwal Harian Teratur</p>
+              <p class="text-[11px] text-slate-600">Tulis jam khusus belajar, latihan, dan waktu luang secara disiplin.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-3 shadow-playful-sm space-y-2">
+          <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">❌</span>
+            <div>
+              <p class="text-[11px] font-bold text-rose-600 uppercase">Tantangan #2</p>
+              <p class="text-xs text-slate-800 font-bold">Belum Menguasai Kemampuan</p>
+              <p class="text-[11px] text-slate-600">Merasa jurus/keterampilan masih sering salah atau kurang pas.</p>
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">✅</span>
+            <div>
+              <p class="text-[11px] font-bold text-emerald-600 uppercase">Solusi Cerdas</p>
+              <p class="text-xs text-slate-800 font-bold">Berlatih Bertahap & Sabar</p>
+              <p class="text-[11px] text-slate-600">Mulailah dari gerakan paling dasar secara berulang-ulang.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-3 shadow-playful-sm space-y-2">
+          <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">❌</span>
+            <div>
+              <p class="text-[11px] font-bold text-rose-600 uppercase">Tantangan #3</p>
+              <p class="text-xs text-slate-800 font-bold">Rasa Bosan atau Rusak Semangat</p>
+              <p class="text-[11px] text-slate-600">Gampang menyerah ketika mengalami kegagalan saat mencoba.</p>
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">✅</span>
+            <div>
+              <p class="text-[11px] font-bold text-emerald-600 uppercase">Solusi Cerdas</p>
+              <p class="text-xs text-slate-800 font-bold">Minta Bimbingan Guru & Orang Tua</p>
+              <p class="text-[11px] text-slate-600">Curhat dan minta petunjuk dari orang dewasa yang berpengalaman.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-3 shadow-playful-sm space-y-2">
+          <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">❌</span>
+            <div>
+              <p class="text-[11px] font-bold text-rose-600 uppercase">Tantangan #4</p>
+              <p class="text-xs text-slate-800 font-bold">Kurang Latihan & Pengetahuan</p>
+              <p class="text-[11px] text-slate-600">Malas membaca buku atau jarang mempraktikkan materi.</p>
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl flex items-start gap-2">
+            <span class="text-lg">✅</span>
+            <div>
+              <p class="text-[11px] font-bold text-emerald-600 uppercase">Solusi Cerdas</p>
+              <p class="text-xs text-slate-800 font-bold">Terus Belajar & Cari Informasi</p>
+              <p class="text-[11px] text-slate-600">Membaca buku modul, bertanya, dan aktif mengikuti wawancara.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="navigateTo('portal4')" class="w-full bg-orange-500 text-white font-fun font-bold py-3 rounded-2xl shadow-playful-orange active:translate-y-1 transition text-center">
+        Lanjut ke Portal 4 ➔
+      </button>
+    </section>
+
+    <!-- PORTAL 4: MENGENAL WAWANCARA -->
+    <section id="portal-4" class="hidden space-y-5">
+      <div class="bg-emerald-100 border-2 border-emerald-300 rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-3xl">🎙️</span>
+        <div>
+          <span class="text-[10px] font-bold text-emerald-600 bg-emerald-200 px-2 py-0.5 rounded">PORTAL 4</span>
+          <h2 class="font-fun text-xl font-bold text-emerald-900">Mengenal Wawancara</h2>
+        </div>
+      </div>
+
+      <!-- DEFINITION BOX -->
+      <div class="bg-white border-2 border-emerald-300 rounded-2xl p-4 shadow-playful space-y-2">
+        <h3 class="font-fun font-bold text-emerald-900 text-base">Apa itu Wawancara?</h3>
+        <p class="text-xs text-slate-700 leading-relaxed bg-emerald-50 p-3 rounded-xl border border-emerald-200">
+          <strong>Wawancara</strong> adalah kegiatan <strong>tanya jawab</strong> antara dua orang atau lebih untuk memperoleh informasi, keterangan, atau penjelasan tepercaya mengenai suatu topik dari ahlinya.
+        </p>
+      </div>
+
+      <!-- 4 MAIN COMPONENTS ICON GRID -->
+      <div class="space-y-2">
+        <h3 class="font-fun font-bold text-slate-800 text-sm">🧩 4 Komponen Utama Wawancara:</h3>
+        <div class="grid grid-cols-2 gap-2">
+          
+          <div class="bg-white border-2 border-sky-200 p-3 rounded-xl shadow-sm text-center">
+            <div class="text-3xl mb-1">🙋‍♂️</div>
+            <h4 class="font-fun font-bold text-xs text-sky-900">1. Pewawancara</h4>
+            <p class="text-[10px] text-slate-500 mt-0.5">Orang yang mengajukan pertanyaan.</p>
+          </div>
+
+          <div class="bg-white border-2 border-amber-200 p-3 rounded-xl shadow-sm text-center">
+            <div class="text-3xl mb-1">👨‍🏫</div>
+            <h4 class="font-fun font-bold text-xs text-amber-900">2. Narasumber</h4>
+            <p class="text-[10px] text-slate-500 mt-0.5">Orang yang memberikan jawaban/informasi.</p>
+          </div>
+
+          <div class="bg-white border-2 border-purple-200 p-3 rounded-xl shadow-sm text-center">
+            <div class="text-3xl mb-1">❓</div>
+            <h4 class="font-fun font-bold text-xs text-purple-900">3. Pertanyaan</h4>
+            <p class="text-[10px] text-slate-500 mt-0.5">Kalimat untuk menggali fakta/informasi.</p>
+          </div>
+
+          <div class="bg-white border-2 border-emerald-200 p-3 rounded-xl shadow-sm text-center">
+            <div class="text-3xl mb-1">📝</div>
+            <h4 class="font-fun font-bold text-xs text-emerald-900">4. Catatan Wawancara</h4>
+            <p class="text-[10px] text-slate-500 mt-0.5">Rangkuman poin-poin penting jawaban.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ETIKA WAWANCARA CHECKLIST -->
+      <div class="bg-white border-2 border-emerald-300 rounded-2xl p-4 shadow-playful space-y-3">
+        <h3 class="font-fun font-bold text-slate-800 text-base flex items-center gap-2">
+          <span>🤝 Etika Wawancara Cerdas</span>
+        </h3>
+        <p class="text-[11px] text-slate-500">Siswa yang baik selalu memperhatikan hal-hal berikut:</p>
+
+        <div class="space-y-2">
+          <div class="flex items-center space-x-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+            <span class="text-emerald-600 font-bold">☑️</span>
+            <span class="text-xs text-slate-700 font-semibold">Bersikap sopan, ramah, dan mengcapkan salam.</span>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+            <span class="text-emerald-600 font-bold">☑️</span>
+            <span class="text-xs text-slate-700 font-semibold">Mendengarkan penjelasan narasumber dengan saksama.</span>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+            <span class="text-emerald-600 font-bold">☑️</span>
+            <span class="text-xs text-slate-700 font-semibold"><strong>Tidak memotong</strong> pembicaraan narasumber.</span>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+            <span class="text-emerald-600 font-bold">☑️</span>
+            <span class="text-xs text-slate-700 font-semibold">Mencatat atau merekam poin penting secara tepat.</span>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="navigateTo('portal5')" class="w-full bg-emerald-500 text-white font-fun font-bold py-3 rounded-2xl shadow-playful-green active:translate-y-1 transition text-center">
+        Lanjut ke Portal 5 ➔
+      </button>
+    </section>
+
+    <!-- PORTAL 5: CONTOH PERTANYAAN WAWANCARA -->
+    <section id="portal-5" class="hidden space-y-5">
+      <div class="bg-purple-100 border-2 border-purple-300 rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-3xl">💬</span>
+        <div>
+          <span class="text-[10px] font-bold text-purple-600 bg-purple-200 px-2 py-0.5 rounded">PORTAL 5</span>
+          <h2 class="font-fun text-xl font-bold text-purple-900">Contoh Pertanyaan Wawancara Minat</h2>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-600">Berikut adalah 5 contoh gelembung pertanyaan yang bisa kamu ajukan saat mewawancarai teman mengenai minatnya:</p>
+
+      <!-- CHAT BUBBLE CARDS -->
+      <div class="space-y-3">
+        
+        <!-- Bubble 1 -->
+        <div class="flex items-start space-x-2">
+          <div class="w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center shrink-0 shadow-sm text-sm">Q1</div>
+          <div class="bg-amber-100 border-2 border-amber-300 text-amber-950 p-3 rounded-2xl rounded-tl-none shadow-sm text-xs font-semibold flex-grow">
+            "Apa kegiatan yang paling kamu sukai saat berada di sekolah maupun di rumah?"
+          </div>
+        </div>
+
+        <!-- Bubble 2 -->
+        <div class="flex items-start space-x-2">
+          <div class="w-10 h-10 rounded-full bg-sky-400 text-white font-bold flex items-center justify-center shrink-0 shadow-sm text-sm">Q2</div>
+          <div class="bg-sky-100 border-2 border-sky-300 text-sky-950 p-3 rounded-2xl rounded-tl-none shadow-sm text-xs font-semibold flex-grow">
+            "Sejak kapan kamu mulai menyukai dan menekuni kegiatan tersebut?"
+          </div>
+        </div>
+
+        <!-- Bubble 3 -->
+        <div class="flex items-start space-x-2">
+          <div class="w-10 h-10 rounded-full bg-emerald-400 text-white font-bold flex items-center justify-center shrink-0 shadow-sm text-sm">Q3</div>
+          <div class="bg-emerald-100 border-2 border-emerald-300 text-emerald-950 p-3 rounded-2xl rounded-tl-none shadow-sm text-xs font-semibold flex-grow">
+            "Mengapa kamu sangat menyukai kegiatan tersebut dibanding kegiatan lainnya?"
+          </div>
+        </div>
+
+        <!-- Bubble 4 -->
+        <div class="flex items-start space-x-2">
+          <div class="w-10 h-10 rounded-full bg-purple-400 text-white font-bold flex items-center justify-center shrink-0 shadow-sm text-sm">Q4</div>
+          <div class="bg-purple-100 border-2 border-purple-300 text-purple-950 p-3 rounded-2xl rounded-tl-none shadow-sm text-xs font-semibold flex-grow">
+            "Apa hal baru yang ingin kamu pelajari agar kemampuanmu semakin mahir?"
+          </div>
+        </div>
+
+        <!-- Bubble 5 -->
+        <div class="flex items-start space-x-2">
+          <div class="w-10 h-10 rounded-full bg-rose-400 text-white font-bold flex items-center justify-center shrink-0 shadow-sm text-sm">Q5</div>
+          <div class="bg-rose-100 border-2 border-rose-300 text-rose-950 p-3 rounded-2xl rounded-tl-none shadow-sm text-xs font-semibold flex-grow">
+            "Kesulitan apa yang pernah kamu hadapi saat melakukan kegiatan tersebut dan bagaimana solusimu?"
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PRACTICE TIP BOX -->
+      <div class="bg-white border-2 border-purple-300 p-4 rounded-2xl shadow-playful text-center space-y-2">
+        <span class="text-3xl">🎭</span>
+        <h4 class="font-fun font-bold text-slate-800 text-sm">Latihan Praktik Berpasangan</h4>
+        <p class="text-xs text-slate-600">Cobalah bermain peran bersama teman sebangkumu! Satu orang menjadi pewawancara dan satu orang menjadi narasumber secara bergantian.</p>
+      </div>
+
+      <button onclick="navigateTo('portal6')" class="w-full bg-rose-500 text-white font-fun font-bold py-3.5 rounded-2xl shadow-playful hover:bg-rose-600 active:translate-y-1 transition text-center text-base pulse-glow">
+        Siap Ujian? Buka Portal 6 (Asesmen) 📝
+      </button>
+    </section>
+
+    <!-- PORTAL 6: ASESMEN FORMATIF INTERAKTIF -->
+    <section id="portal-6" class="hidden space-y-5">
+      
+      <!-- IDENTITY INPUT MODAL / STEP 1 -->
+      <div id="assessmentIdentityModal" class="bg-white border-4 border-rose-400 rounded-3xl p-5 shadow-playful space-y-4">
+        <div class="text-center space-y-1">
+          <span class="text-4xl">📝</span>
+          <h2 class="font-fun font-black text-2xl text-rose-600">Asesmen Formatif</h2>
+          <p class="text-xs text-slate-500">Materi: Minat, Bakat & Wawancara (20 Soal - Nilai Maks 100)</p>
+        </div>
+
+        <div class="bg-rose-50 p-3 rounded-2xl border border-rose-200 text-xs text-rose-800 space-y-1">
+          <p class="font-bold">⚠️ Petunjuk Pengerjaan:</p>
+          <ul class="list-disc list-inside space-y-0.5 text-[11px]">
+            <li>Bagian 1: 5 Soal Benar / Salah (25 Poin)</li>
+            <li>Bagian 2: 5 Soal Menjodohkan Tarik Garis (25 Poin)</li>
+            <li>Bagian 3: 10 Soal Pilihan Ganda (50 Poin)</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <label for="studentNameInput" class="block text-xs font-bold text-slate-700 uppercase">Masukkan Nama Lengkap Siswa: <span class="text-red-500">*</span></label>
+          <input type="text" id="studentNameInput" placeholder="Contoh: Rina Anggraini" class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-rose-500 focus:outline-none font-semibold text-sm">
+          <p id="nameErrorMsg" class="text-xs text-red-500 font-bold hidden">! Mohon isi nama kamu terlebih dahulu sebelum mulai.</p>
+        </div>
+
+        <button onclick="startAssessment()" class="w-full bg-rose-500 hover:bg-rose-600 active:translate-y-1 text-white font-fun font-bold py-3.5 rounded-2xl shadow-playful text-base transition">
+          🚀 Mulai Mengerjakan Sekarang!
+        </button>
+      </div>
+
+      <!-- QUIZ CONTENT CONTAINER (Hidden until name submitted) -->
+      <div id="quizContent" class="hidden space-y-6">
+        
+        <!-- STUDENT INFO BANNER -->
+        <div class="bg-white border-2 border-rose-300 rounded-2xl p-3 flex items-center justify-between shadow-sm">
+          <div class="flex items-center space-x-2">
+            <span class="text-xl">🧑‍🎓</span>
+            <div>
+              <p class="text-[10px] text-slate-400 uppercase font-bold">Nama Peserta</p>
+              <p id="displayStudentName" class="font-fun font-bold text-slate-800 text-sm">Siswa SD</p>
+            </div>
+          </div>
+          <span class="bg-rose-100 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-full">Total 20 Soal</span>
+        </div>
+
+        <!-- ================= BAGIAN 1: BENAR ATAU SALAH ================= -->
+        <div class="bg-white border-2 border-amber-300 rounded-2xl p-4 shadow-playful space-y-4">
+          <div class="border-b pb-2">
+            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-md">BAGIAN 1</span>
+            <h3 class="font-fun font-bold text-slate-800 text-base mt-1">Soal 1–5: Benar atau Salah (Bobot 5 poin/soal)</h3>
+            <p class="text-[11px] text-slate-500">Pilihlah B (Benar) atau S (Salah) untuk tiap pernyataan:</p>
+          </div>
+
+          <!-- Q1 -->
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200 space-y-2">
+            <p class="text-xs font-semibold text-slate-800">1. Minat adalah ketertarikan seseorang terhadap suatu kegiatan atau bidang.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_1" value="BENAR" class="hidden"> BENAR
+              </label>
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_1" value="SALAH" class="hidden"> SALAH
+              </label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200 space-y-2">
+            <p class="text-xs font-semibold text-slate-800">2. Bakat adalah tujuan yang ingin dicapai pada masa depan.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_2" value="BENAR" class="hidden"> BENAR
+              </label>
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_2" value="SALAH" class="hidden"> SALAH
+              </label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200 space-y-2">
+            <p class="text-xs font-semibold text-slate-800">3. Karakter adalah sifat atau sikap yang memengaruhi cara seseorang berpikir dan bertindak.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_3" value="BENAR" class="hidden"> BENAR
+              </label>
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_3" value="SALAH" class="hidden"> SALAH
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200 space-y-2">
+            <p class="text-xs font-semibold text-slate-800">4. Seseorang yang memiliki minat pasti sudah mahir melakukan kegiatan tersebut.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_4" value="BENAR" class="hidden"> BENAR
+              </label>
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_4" value="SALAH" class="hidden"> SALAH
+              </label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200 space-y-2">
+            <p class="text-xs font-semibold text-slate-800">5. Latihan, belajar, dan pengalaman dapat membantu mengembangkan kemampuan.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_5" value="BENAR" class="hidden"> BENAR
+              </label>
+              <label class="flex-1 border-2 border-amber-200 bg-white p-2 rounded-xl text-center text-xs font-bold cursor-pointer hover:bg-amber-100 has-[:checked]:bg-amber-400 has-[:checked]:text-white">
+                <input type="radio" name="tf_5" value="SALAH" class="hidden"> SALAH
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= BAGIAN 2: MENJODOHKAN ISTILAH TARIK GARIS ================= -->
+        <div class="bg-white border-2 border-sky-300 rounded-2xl p-4 shadow-playful space-y-4">
+          <div class="border-b pb-2">
+            <span class="bg-sky-100 text-sky-800 text-[10px] font-bold px-2 py-0.5 rounded-md">BAGIAN 2</span>
+            <h3 class="font-fun font-bold text-slate-800 text-base mt-1">Soal 6–10: Menjodohkan Istilah (Bobot 5 poin/soal)</h3>
+            <p class="text-[11px] text-sky-700 font-semibold mt-0.5">👉 Petunjuk: Sentuh & tarik garis dari titik bundar KIRI ke titik bundar KANAN yang sesuai!</p>
+          </div>
+
+          <div class="relative w-full bg-sky-50 rounded-2xl p-3 border border-sky-200 touch-none select-none overflow-hidden" id="matchingContainer">
+            <!-- Canvas Overlay for drawing lines -->
+            <canvas id="matchingCanvas" class="absolute inset-0 z-10 pointer-events-auto"></canvas>
+
+            <div class="flex justify-between relative z-0">
+              <!-- Left Column: Istilah (6-10) -->
+              <div class="w-[42%] space-y-4 py-2">
+                <div class="bg-white p-2 rounded-xl border-2 border-sky-300 text-[11px] font-bold text-slate-800 flex items-center justify-between min-h-[50px] shadow-sm relative" id="left-item-1" data-id="1">
+                  <span>6. Minat</span>
+                  <div class="dot-node w-5 h-5 bg-sky-500 border-2 border-white rounded-full shrink-0 -mr-4 shadow-sm" data-side="left" data-id="1"></div>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-sky-300 text-[11px] font-bold text-slate-800 flex items-center justify-between min-h-[50px] shadow-sm relative" id="left-item-2" data-id="2">
+                  <span>7. Bakat</span>
+                  <div class="dot-node w-5 h-5 bg-sky-500 border-2 border-white rounded-full shrink-0 -mr-4 shadow-sm" data-side="left" data-id="2"></div>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-sky-300 text-[11px] font-bold text-slate-800 flex items-center justify-between min-h-[50px] shadow-sm relative" id="left-item-3" data-id="3">
+                  <span>8. Cita-cita</span>
+                  <div class="dot-node w-5 h-5 bg-sky-500 border-2 border-white rounded-full shrink-0 -mr-4 shadow-sm" data-side="left" data-id="3"></div>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-sky-300 text-[11px] font-bold text-slate-800 flex items-center justify-between min-h-[50px] shadow-sm relative" id="left-item-4" data-id="4">
+                  <span>9. Pewawancara</span>
+                  <div class="dot-node w-5 h-5 bg-sky-500 border-2 border-white rounded-full shrink-0 -mr-4 shadow-sm" data-side="left" data-id="4"></div>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-sky-300 text-[11px] font-bold text-slate-800 flex items-center justify-between min-h-[50px] shadow-sm relative" id="left-item-5" data-id="5">
+                  <span>10. Narasumber</span>
+                  <div class="dot-node w-5 h-5 bg-sky-500 border-2 border-white rounded-full shrink-0 -mr-4 shadow-sm" data-side="left" data-id="5"></div>
+                </div>
+              </div>
+
+              <!-- Right Column: Pengertian (A-E) -->
+              <div class="w-[48%] space-y-4 py-2">
+                <div class="bg-white p-2 rounded-xl border-2 border-purple-300 text-[10px] text-slate-700 flex items-center justify-start min-h-[50px] shadow-sm relative" id="right-item-A" data-key="A">
+                  <div class="dot-node w-5 h-5 bg-purple-500 border-2 border-white rounded-full shrink-0 -ml-4 shadow-sm" data-side="right" data-key="A"></div>
+                  <span class="ml-1"><strong>A.</strong> Orang yang mengajukan pertanyaan</span>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-purple-300 text-[10px] text-slate-700 flex items-center justify-start min-h-[50px] shadow-sm relative" id="right-item-B" data-key="B">
+                  <div class="dot-node w-5 h-5 bg-purple-500 border-2 border-white rounded-full shrink-0 -ml-4 shadow-sm" data-side="right" data-key="B"></div>
+                  <span class="ml-1"><strong>B.</strong> Ketertarikan terhadap suatu kegiatan/bidang</span>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-purple-300 text-[10px] text-slate-700 flex items-center justify-start min-h-[50px] shadow-sm relative" id="right-item-C" data-key="C">
+                  <div class="dot-node w-5 h-5 bg-purple-500 border-2 border-white rounded-full shrink-0 -ml-4 shadow-sm" data-side="right" data-key="C"></div>
+                  <span class="ml-1"><strong>C.</strong> Tujuan yang ingin dicapai pada masa depan</span>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-purple-300 text-[10px] text-slate-700 flex items-center justify-start min-h-[50px] shadow-sm relative" id="right-item-D" data-key="D">
+                  <div class="dot-node w-5 h-5 bg-purple-500 border-2 border-white rounded-full shrink-0 -ml-4 shadow-sm" data-side="right" data-key="D"></div>
+                  <span class="ml-1"><strong>D.</strong> Orang yang memberikan informasi</span>
+                </div>
+
+                <div class="bg-white p-2 rounded-xl border-2 border-purple-300 text-[10px] text-slate-700 flex items-center justify-start min-h-[50px] shadow-sm relative" id="right-item-E" data-key="E">
+                  <div class="dot-node w-5 h-5 bg-purple-500 border-2 border-white rounded-full shrink-0 -ml-4 shadow-sm" data-side="right" data-key="E"></div>
+                  <span class="ml-1"><strong>E.</strong> Potensi/kemampuan yang dapat dikembangkan</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-2 text-center">
+              <button type="button" onclick="resetMatchingLines()" class="text-xs bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg active:scale-95 transition">
+                🔄 Hapus Garis & Ulangi Menjodohkan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= BAGIAN 3: PILIHAN GANDA ================= -->
+        <div class="bg-white border-2 border-purple-300 rounded-2xl p-4 shadow-playful space-y-5">
+          <div class="border-b pb-2">
+            <span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded-md">BAGIAN 3</span>
+            <h3 class="font-fun font-bold text-slate-800 text-base mt-1">Soal 11–20: Pilihan Ganda (Bobot 5 poin/soal)</h3>
+            <p class="text-[11px] text-slate-500">Pilihlah salah satu opsi A, B, C, atau D yang paling tepat:</p>
+          </div>
+
+          <!-- MC 11 -->
+          <div class="space-y-2">
+            <p class="text-xs font-bold text-slate-800">11. Sikap apa yang dapat membantu seseorang meraih cita-cita?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_11" value="A" class="mr-2"> A. Mudah menyerah
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_11" value="B" class="mr-2"> B. Disiplin dan tekun
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_11" value="C" class="mr-2"> C. Menghindari latihan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_11" value="D" class="mr-2"> D. Tidak mau belajar
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 12 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">12. Berikut ini yang merupakan tantangan dalam meraih cita-cita adalah ....</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_12" value="A" class="mr-2"> A. Membuat jadwal harian
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_12" value="B" class="mr-2"> B. Meminta bimbingan guru
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_12" value="C" class="mr-2"> C. Kesulitan membagi waktu
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_12" value="D" class="mr-2"> D. Terus belajar bertahap
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 13 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">13. Apa yang sebaiknya dilakukan ketika menghadapi kesulitan mengembangkan kemampuan?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_13" value="A" class="mr-2"> A. Berhenti mencoba sama sekali
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_13" value="B" class="mr-2"> B. Menghindari bimbingan orang tua
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_13" value="C" class="mr-2"> C. Menyerah pada keadaan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_13" value="D" class="mr-2"> D. Berlatih bertahap dan meminta bimbingan
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 14 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">14. Apa tujuan utama dari melakukan wawancara?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_14" value="A" class="mr-2"> A. Memperoleh informasi tepercaya dari seseorang
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_14" value="B" class="mr-2"> B. Menghafal semua jawaban narasumber
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_14" value="C" class="mr-2"> C. Menentukan nilai rapor teman
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_14" value="D" class="mr-2"> D. Menceritakan pengalaman pribadi saja
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 15 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">15. Siapakah yang disebut sebagai narasumber dalam wawancara?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_15" value="A" class="mr-2"> A. Orang yang bertugas mencatat nilai
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_15" value="B" class="mr-2"> B. Orang yang mengajukan pertanyaan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_15" value="C" class="mr-2"> C. Orang yang memberikan informasi atau jawaban
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_15" value="D" class="mr-2"> D. Orang yang mengamati dari jauh
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 16 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">16. Pertanyaan yang paling tepat untuk mengetahui alasan seseorang menyukai suatu kegiatan adalah ....</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_16" value="A" class="mr-2"> A. Di mana kamu tinggal saat ini?
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_16" value="B" class="mr-2"> B. Mengapa kamu menyukai kegiatan tersebut?
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_16" value="C" class="mr-2"> C. Siapa nama tetangga di sebelah rumahmu?
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_16" value="D" class="mr-2"> D. Berapa jumlah buku di rumahmu?
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 17 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">17. Saat sedang melakukan wawancara, etika yang baik adalah ....</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_17" value="A" class="mr-2"> A. Memotong jawaban narasumber secara tiba-tiba
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_17" value="B" class="mr-2"> B. Mengabaikan jawaban yang diberikan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_17" value="C" class="mr-2"> C. Bertanya tanpa sopan santun
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_17" value="D" class="mr-2"> D. Mendengarkan penjelasan dengan saksama
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 18 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">18. Apa yang dimaksud dengan catatan wawancara?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_18" value="A" class="mr-2"> A. Catatan jadwal pelajaran harian
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_18" value="B" class="mr-2"> B. Daftar nilai ujian seluruh siswa
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_18" value="C" class="mr-2"> C. Rangkuman informasi penting dari jawaban narasumber
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_18" value="D" class="mr-2"> D. Cerita rekaan yang tidak berkaitan dengan topik
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 19 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">19. Rina suka menggambar, rutin berlatih, dan ingin menjadi ilustrator. Kegiatan yang menjadi minat Rina adalah ....</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_19" value="A" class="mr-2"> A. Menggambar
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_19" value="B" class="mr-2"> B. Menjadi ilustrator
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_19" value="C" class="mr-2"> C. Mengatur jadwal harian
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_19" value="D" class="mr-2"> D. Meminta bimbingan guru
+              </label>
+            </div>
+          </div>
+
+          <!-- MC 20 -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800">20. Manakah urutan langkah yang paling sesuai untuk mengembangkan minat menjadi kemampuan?</p>
+            <div class="space-y-1.5">
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_20" value="A" class="mr-2"> A. Menyerah, berhenti belajar, lalu memilih cita-cita lain
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_20" value="B" class="mr-2"> B. Mengenali kegiatan yang disukai, berlatih rutin, dan mengembangkan kemampuan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_20" value="C" class="mr-2"> C. Menghindari latihan, langsung menentukan target keberhasilan
+              </label>
+              <label class="block p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-xs text-slate-700 cursor-pointer has-[:checked]:bg-purple-100 has-[:checked]:border-purple-500 font-semibold">
+                <input type="radio" name="mc_20" value="D" class="mr-2"> D. Menentukan hasil tanpa perlu melakukan usaha apa pun
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button onclick="calculateAndShowResult()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-fun font-bold text-lg py-4 rounded-2xl shadow-playful-green active:translate-y-1 transition text-center">
+          ✅ Selesai & Lihat Hasil Nilai
+        </button>
+
+      </div>
+
+      <!-- RESULT SCORE CARD (Hidden by default) -->
+      <div id="assessmentResultCard" class="hidden space-y-5">
+        
+        <!-- HIGHLY VISIBLE WHATSAPP SCREENSHOT ALERT BANNER -->
+        <div class="bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 p-4 rounded-3xl shadow-playful text-white border-4 border-yellow-200 animate-bounce-slow">
+          <div class="flex items-center space-x-3">
+            <span class="text-4xl">📸</span>
+            <div>
+              <h3 class="font-fun font-black text-base uppercase tracking-wider text-yellow-100">PERHATIAN WAJIB!</h3>
+              <p class="text-xs font-extrabold leading-snug mt-0.5">
+                Silakan <span class="underline decoration-yellow-300 decoration-2">SCREENSHOT</span> halaman hasil nilai ini dan kirimkan langsung ke <strong>WhatsApp pribadi Guru!</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCORE DISPLAY -->
+        <div class="bg-white border-4 border-emerald-400 rounded-3xl p-5 shadow-playful text-center space-y-3">
+          <span class="text-5xl">🏆</span>
+          <h3 class="font-fun font-bold text-slate-700 text-lg">Hasil Asesmen Formatif</h3>
+          <p id="resultStudentInfo" class="text-xs font-semibold text-slate-500">Nama: Siswa SD</p>
+
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-4 my-2">
+            <p class="text-xs font-bold text-emerald-800 uppercase tracking-widest">NILAI AKHIR KAMU</p>
+            <div id="finalScoreDisplay" class="font-fun font-black text-6xl text-emerald-600 my-1">100</div>
+            <p id="correctSummaryText" class="text-xs font-bold text-slate-600">Jawaban Benar: 20 / 20 Soal</p>
+          </div>
+
+          <div id="scoreFeedbackMsg" class="text-xs font-semibold p-2.5 rounded-xl bg-amber-50 text-amber-800 border border-amber-200">
+            Luar biasa! Kamu sangat memahami materi Bahasa Indonesia tentang Minat, Bakat & Wawancara ini.
+          </div>
+        </div>
+
+        <!-- EVALUATION SUMMARY BUTTON (ANTI-REPETITION RULES APPLIED) -->
+        <div class="space-y-3">
+          <button onclick="toggleEvaluationTips()" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-fun font-bold py-3.5 rounded-2xl shadow-playful-blue active:translate-y-1 transition text-center text-sm flex items-center justify-center gap-2">
+            <span>💡 Lihat Rangkuman Evaluasi Pengerjaan</span>
+          </button>
+
+          <!-- RANGKUMAN EVALUASI BOX (NEVER EXPOSES ANSWERS DIRECTLY) -->
+          <div id="evaluationTipsBox" class="hidden bg-white border-2 border-sky-300 rounded-2xl p-4 shadow-playful space-y-3 text-xs text-slate-700">
+            <div class="border-b pb-2">
+              <h4 class="font-fun font-bold text-sky-900 text-base">📘 Tips Rangkuman Cara Pengerjaan</h4>
+              <p class="text-[11px] text-slate-500">Gunakan pedoman konsep ini untuk mempertajam pemahamanmu:</p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 space-y-1">
+                <p class="font-bold text-amber-900">📌 Tips Bagian 1 (Benar/Salah):</p>
+                <p class="text-[11px] text-slate-600">Pahami perbedaan mendasar: <em>Minat</em> adalah perasaan suka/tertarik, <em>Bakat</em> adalah potensi dasar, dan <em>Cita-cita</em> adalah impian tujuan masa depan. Ingat bahwa orang yang berminat tidak otomatis langsung mahir tanpa berlatih.</p>
+              </div>
+
+              <div class="bg-sky-50 p-3 rounded-xl border border-sky-200 space-y-1">
+                <p class="font-bold text-sky-900">📌 Tips Bagian 2 (Menjodohkan):</p>
+                <p class="text-[11px] text-slate-600">Perhatikan kata kunci subjeknya! <em>Pewawancara</em> selalu berperan mengajukan pertanyaan, sedangkan <em>Narasumber</em> berperan memberikan informasi/jawaban.</p>
+              </div>
+
+              <div class="bg-purple-50 p-3 rounded-xl border border-purple-200 space-y-1">
+                <p class="font-bold text-purple-900">📌 Tips Bagian 3 (Pilihan Ganda):</p>
+                <p class="text-[11px] text-slate-600">Pilihlah selalu opsi yang mencerminkan sikap positif (disiplin, tekun), etika wawancara yang santun (mendengarkan dengan saksama tanpa memotong), serta alur bertahap dalam meraih impian.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="navigateTo('dashboard')" class="w-full bg-slate-700 text-white font-fun font-bold py-3 rounded-2xl shadow-playful active:translate-y-1 transition text-center text-sm">
+          🏠 Kembali ke Menu Utama
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    /* ================= NAVIGATION LOGIC ================= */
+    function navigateTo(portalId) {
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Hide all portals
+      const portals = ['dashboard', '1', '2', '3', '4', '5', '6'];
+      portals.forEach(p => {
+        const el = document.getElementById('portal-' + p);
+        if (el) el.classList.add('hidden');
+      });
+
+      // Show header home button if not in dashboard
+      const headerHomeBtn = document.getElementById('headerHomeBtn');
+      if (portalId === 'dashboard') {
+        headerHomeBtn.classList.add('hidden');
+        document.getElementById('portal-dashboard').classList.remove('hidden');
+      } else {
+        headerHomeBtn.classList.remove('hidden');
+        const target = document.getElementById('portal-' + portalId.replace('portal', ''));
+        if (target) target.classList.remove('hidden');
+      }
+
+      // If opening Portal 6, trigger canvas resize after DOM update
+      if (portalId === 'portal6' || portalId === '6') {
+        setTimeout(initMatchingCanvas, 100);
+      }
+    }
+
+    /* ================= PORTAL 1 INTERACTIVITY ================= */
+    function toggleCardDetail(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('hidden');
+      }
+    }
+
+    /* ================= PORTAL 6: ASSESSMENT LOGIC ================= */
+    let studentName = "";
+    
+    function startAssessment() {
+      const input = document.getElementById('studentNameInput');
+      const err = document.getElementById('nameErrorMsg');
+      if (!input.value.trim()) {
+        err.classList.remove('hidden');
+        input.focus();
+        return;
+      }
+      err.classList.add('hidden');
+      studentName = input.value.trim();
+      
+      document.getElementById('displayStudentName').innerText = studentName;
+      document.getElementById('assessmentIdentityModal').classList.add('hidden');
+      document.getElementById('quizContent').classList.remove('hidden');
+      
+      // Initialize matching interactive canvas
+      setTimeout(initMatchingCanvas, 150);
+    }
+
+    /* ================= BAGIAN 2: CANVAS MATCHING LINE DRAWING ================= */
+    const userConnections = {}; // Map left item index (1..5) to matched letter ('A'..'E')
+    let isDrawing = false;
+    let activeLeftId = null;
+    let currentTouchPos = { x: 0, y: 0 };
+
+    // Key answer mappings for Bagian 2
+    const MATCHING_KEYS = {
+      1: 'B', // Minat -> Ketertarikan
+      2: 'E', // Bakat -> Potensi
+      3: 'C', // Cita-cita -> Tujuan
+      4: 'A', // Pewawancara -> Orang yang bertanya
+      5: 'D'  // Narasumber -> Orang memberikan info
+    };
+
+    function initMatchingCanvas() {
+      const container = document.getElementById('matchingContainer');
+      const canvas = document.getElementById('matchingCanvas');
+      if (!container || !canvas) return;
+
+      const rect = container.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+
+      // Register Pointer/Touch Events
+      canvas.removeEventListener('pointerdown', handlePointerDown);
+      canvas.removeEventListener('pointermove', handlePointerMove);
+      canvas.removeEventListener('pointerup', handlePointerUp);
+
+      canvas.addEventListener('pointerdown', handlePointerDown);
+      canvas.addEventListener('pointermove', handlePointerMove);
+      canvas.addEventListener('pointerup', handlePointerUp);
+
+      redrawCanvasLines();
+    }
+
+    function getDotCenter(side, keyOrId) {
+      const container = document.getElementById('matchingContainer');
+      const containerRect = container.getBoundingClientRect();
+      let selector = side === 'left' ? `#left-item-${keyOrId} .dot-node` : `#right-item-${keyOrId} .dot-node`;
+      const dot = container.querySelector(selector);
+      if (!dot) return { x: 0, y: 0 };
+
+      const dotRect = dot.getBoundingClientRect();
+      return {
+        x: dotRect.left + dotRect.width / 2 - containerRect.left,
+        y: dotRect.top + dotRect.height / 2 - containerRect.top
+      };
+    }
+
+    function handlePointerDown(e) {
+      const container = document.getElementById('matchingContainer');
+      const containerRect = container.getBoundingClientRect();
+      const pointerX = e.clientX - containerRect.left;
+      const pointerY = e.clientY - containerRect.top;
+
+      // Check if pressed near any left dot node
+      for (let i = 1; i <= 5; i++) {
+        const pos = getDotCenter('left', i);
+        const dist = Math.hypot(pos.x - pointerX, pos.y - pointerY);
+        if (dist < 28) {
+          isDrawing = true;
+          activeLeftId = i;
+          currentTouchPos = { x: pointerX, y: pointerY };
+          redrawCanvasLines();
+          break;
+        }
+      }
+    }
+
+    function handlePointerMove(e) {
+      if (!isDrawing) return;
+      const container = document.getElementById('matchingContainer');
+      const containerRect = container.getBoundingClientRect();
+      currentTouchPos = {
+        x: e.clientX - containerRect.left,
+        y: e.clientY - containerRect.top
+      };
+      redrawCanvasLines();
+    }
+
+    function handlePointerUp(e) {
+      if (!isDrawing) return;
+      isDrawing = false;
+
+      const container = document.getElementById('matchingContainer');
+      const containerRect = container.getBoundingClientRect();
+      const pointerX = e.clientX - containerRect.left;
+      const pointerY = e.clientY - containerRect.top;
+
+      // Check if dropped near any right dot node
+      const rightKeys = ['A', 'B', 'C', 'D', 'E'];
+      for (let k of rightKeys) {
+        const pos = getDotCenter('right', k);
+        const dist = Math.hypot(pos.x - pointerX, pos.y - pointerY);
+        if (dist < 32) {
+          userConnections[activeLeftId] = k;
+          break;
+        }
+      }
+      activeLeftId = null;
+      redrawCanvasLines();
+    }
+
+    function redrawCanvasLines() {
+      const canvas = document.getElementById('matchingCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw stored lines
+      Object.keys(userConnections).forEach(leftId => {
+        const rightKey = userConnections[leftId];
+        const start = getDotCenter('left', leftId);
+        const end = getDotCenter('right', rightKey);
+
+        ctx.beginPath();
+        ctx.moveTo(start.x, start.y);
+        ctx.lineTo(end.x, end.y);
+        ctx.strokeStyle = '#00A8E8';
+        ctx.lineWidth = 4;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      });
+
+      // Draw current active line while dragging
+      if (isDrawing && activeLeftId) {
+        const start = getDotCenter('left', activeLeftId);
+        ctx.beginPath();
+        ctx.moveTo(start.x, start.y);
+        ctx.lineTo(currentTouchPos.x, currentTouchPos.y);
+        ctx.strokeStyle = '#FF7A00';
+        ctx.lineWidth = 4;
+        ctx.setLineDash([6, 6]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+
+    function resetMatchingLines() {
+      for (let key in userConnections) {
+        delete userConnections[key];
+      }
+      redrawCanvasLines();
+    }
+
+    // Resize canvas on orientation change or browser resize
+    window.addEventListener('resize', () => {
+      initMatchingCanvas();
+    });
+
+    /* ================= SCORING & FINAL ASSESSMENT CALCULATION ================= */
+    const ANSWER_KEYS = {
+      // Bagian 1: Benar / Salah
+      tf_1: 'BENAR',
+      tf_2: 'SALAH',
+      tf_3: 'BENAR',
+      tf_4: 'SALAH',
+      tf_5: 'BENAR',
+      // Bagian 3: Pilihan Ganda (11-20)
+      mc_11: 'B',
+      mc_12: 'C',
+      mc_13: 'D',
+      mc_14: 'A',
+      mc_15: 'C',
+      mc_16: 'B',
+      mc_17: 'D',
+      mc_18: 'C',
+      mc_19: 'A',
+      mc_20: 'B'
+    };
+
+    function calculateAndShowResult() {
+      let correctCount = 0;
+
+      // 1. Check Bagian 1 (TF 1..5)
+      for (let i = 1; i <= 5; i++) {
+        const qName = 'tf_' + i;
+        const selected = document.querySelector(`input[name="${qName}"]:checked`);
+        if (selected && selected.value === ANSWER_KEYS[qName]) {
+          correctCount++;
+        }
+      }
+
+      // 2. Check Bagian 2 (Matching 6..10)
+      for (let i = 1; i <= 5; i++) {
+        if (userConnections[i] === MATCHING_KEYS[i]) {
+          correctCount++;
+        }
+      }
+
+      // 3. Check Bagian 3 (MC 11..20)
+      for (let i = 11; i <= 20; i++) {
+        const qName = 'mc_' + i;
+        const selected = document.querySelector(`input[name="${qName}"]:checked`);
+        if (selected && selected.value === ANSWER_KEYS[qName]) {
+          correctCount++;
+        }
+      }
+
+      // Calculate score (Each question = 5 points)
+      const finalScore = correctCount * 5;
+
+      // UI Display update
+      document.getElementById('resultStudentInfo').innerText = "Nama Siswa: " + studentName;
+      document.getElementById('finalScoreDisplay').innerText = finalScore;
+      document.getElementById('correctSummaryText').innerText = `Jawaban Benar: ${correctCount} / 20 Soal`;
+
+      const msgBox = document.getElementById('scoreFeedbackMsg');
+      if (finalScore >= 85) {
+        msgBox.className = "text-xs font-semibold p-3 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300";
+        msgBox.innerText = "🎉 Luar Biasa Unggul! Kamu telah menguasai seluruh materi minat, bakat, dan wawancara dengan sangat sempurna!";
+      } else if (finalScore >= 70) {
+        msgBox.className = "text-xs font-semibold p-3 rounded-xl bg-sky-100 text-sky-900 border border-sky-300";
+        msgBox.innerText = "👍 Bagus Sekali! Pemahamanmu sudah baik. Pelajari lagi poin-poin yang masih membingungkan ya!";
+      } else {
+        msgBox.className = "text-xs font-semibold p-3 rounded-xl bg-amber-100 text-amber-900 border border-amber-300";
+        msgBox.innerText = "💪 Tetap Semangat! Jangan berkecil hati. Buka kembali portal materi 1 sampai 5 dan cobalah kembali!";
+      }
+
+      // Hide Quiz form and show Result Card
+      document.getElementById('quizContent').classList.add('hidden');
+      document.getElementById('assessmentResultCard').classList.remove('hidden');
+
+      // Scroll to top of result
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ================= TOGGLE EVALUATION TIPS (STRICT ANTI-REPETITION) ================= */
+    function toggleEvaluationTips() {
+      const tipsBox = document.getElementById('evaluationTipsBox');
+      if (tipsBox) {
+        tipsBox.classList.toggle('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
